@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="LIVRE", indexes={@ORM\Index(name="ID_Auteur", columns={"ID_Auteur"})})
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\Auteur")
+ * @ORM\Entity(repositoryClass="App\Repository\Livre")
  */
 
 class Livre
@@ -47,6 +47,47 @@ class Livre
      * })
      */
     private $idAuteur;
+
+    public function getIsbn(): ?string
+    {
+        return $this->isbn;
+    }
+
+    public function getTitreLivre(): ?string
+    {
+        return $this->titreLivre;
+    }
+
+    public function setTitreLivre(?string $titreLivre): self
+    {
+        $this->titreLivre = $titreLivre;
+
+        return $this;
+    }
+
+    public function getAnneeEdition(): ?\DateTimeInterface
+    {
+        return $this->anneeEdition;
+    }
+
+    public function setAnneeEdition(\DateTimeInterface $anneeEdition): self
+    {
+        $this->anneeEdition = $anneeEdition;
+
+        return $this;
+    }
+
+    public function getIdAuteur(): ?Auteur
+    {
+        return $this->idAuteur;
+    }
+
+    public function setIdAuteur(?Auteur $idAuteur): self
+    {
+        $this->idAuteur = $idAuteur;
+
+        return $this;
+    }
 
 
 }

@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="UTILISATEUR")
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\Auteur")
+ * @ORM\Entity(repositoryClass="App\Repository\Utilisateur")
  */
 
 class Utilisateur
@@ -40,6 +40,42 @@ class Utilisateur
      * })
      */
     private $mail;
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getMotDePasse(): ?string
+    {
+        return $this->motDePasse;
+    }
+
+    public function setMotDePasse(string $motDePasse): self
+    {
+        $this->motDePasse = $motDePasse;
+
+        return $this;
+    }
+
+    public function getMail(): ?Emprunteur
+    {
+        return $this->mail;
+    }
+
+    public function setMail(?Emprunteur $mail): self
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
 
 
 }

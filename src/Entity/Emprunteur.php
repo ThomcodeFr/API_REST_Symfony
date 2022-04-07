@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="EMPRUNTEUR", indexes={@ORM\Index(name="ID_Mail", columns={"ID_Mail"})})
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\Auteur")
+ * @ORM\Entity(repositoryClass="App\Repository\Emprunteur")
  */
 
 class Emprunteur
@@ -51,6 +51,59 @@ class Emprunteur
      * @ORM\Column(name="Actif", type="boolean", nullable=true)
      */
     private $actif;
+
+    public function getIdEmprunteur(): ?int
+    {
+        return $this->idEmprunteur;
+    }
+
+    public function getIdMail(): ?string
+    {
+        return $this->idMail;
+    }
+
+    public function setIdMail(string $idMail): self
+    {
+        $this->idMail = $idMail;
+
+        return $this;
+    }
+
+    public function getPrenomEmprunteur(): ?string
+    {
+        return $this->prenomEmprunteur;
+    }
+
+    public function setPrenomEmprunteur(string $prenomEmprunteur): self
+    {
+        $this->prenomEmprunteur = $prenomEmprunteur;
+
+        return $this;
+    }
+
+    public function getTelephone(): ?int
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(int $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getActif(): ?bool
+    {
+        return $this->actif;
+    }
+
+    public function setActif(?bool $actif): self
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
 
 
 }

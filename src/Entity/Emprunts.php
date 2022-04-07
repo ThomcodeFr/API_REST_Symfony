@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="EMPRUNTS", indexes={@ORM\Index(name="ID_Emprunteur", columns={"ID_Emprunteur"}), @ORM\Index(name="ISBN", columns={"ISBN"})})
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\Auteur")
+ * @ORM\Entity(repositoryClass="App\Repository\Emprunter")
  */
 
 class Emprunts
@@ -47,6 +47,47 @@ class Emprunts
      * })
      */
     private $idEmprunteur;
+
+    public function getIsbn(): ?string
+    {
+        return $this->isbn;
+    }
+
+    public function setIsbn(string $isbn): self
+    {
+        $this->isbn = $isbn;
+
+        return $this;
+    }
+
+    public function getDateEmprunt(): ?\DateTimeInterface
+    {
+        return $this->dateEmprunt;
+    }
+
+    public function getDateRendu(): ?\DateTimeInterface
+    {
+        return $this->dateRendu;
+    }
+
+    public function setDateRendu(?\DateTimeInterface $dateRendu): self
+    {
+        $this->dateRendu = $dateRendu;
+
+        return $this;
+    }
+
+    public function getIdEmprunteur(): ?Emprunteur
+    {
+        return $this->idEmprunteur;
+    }
+
+    public function setIdEmprunteur(?Emprunteur $idEmprunteur): self
+    {
+        $this->idEmprunteur = $idEmprunteur;
+
+        return $this;
+    }
 
 
 }

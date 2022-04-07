@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="GENRE")
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\Auteur")
+ * @ORM\Entity(repositoryClass="App\Repository\Genre")
  */
 
 class Genre
@@ -37,6 +37,35 @@ class Genre
      * @ORM\Column(name="Description", type="string", length=255, nullable=true)
      */
     private $description;
+
+    public function getIdGenre(): ?int
+    {
+        return $this->idGenre;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
 
 
 }

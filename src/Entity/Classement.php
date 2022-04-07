@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="CLASSEMENT", indexes={@ORM\Index(name="ISBN", columns={"ISBN"}), @ORM\Index(name="ID_Genre", columns={"ID_Genre"})})
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\Auteur")
+ * @ORM\Entity(repositoryClass="App\Repository\Classement")
  */
 
 class Classement
@@ -36,6 +36,30 @@ class Classement
      * })
      */
     private $isbn;
+
+    public function getIdGenre(): ?Genre
+    {
+        return $this->idGenre;
+    }
+
+    public function setIdGenre(?Genre $idGenre): self
+    {
+        $this->idGenre = $idGenre;
+
+        return $this;
+    }
+
+    public function getIsbn(): ?Emprunts
+    {
+        return $this->isbn;
+    }
+
+    public function setIsbn(?Emprunts $isbn): self
+    {
+        $this->isbn = $isbn;
+
+        return $this;
+    }
 
 
 }

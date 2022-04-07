@@ -38,5 +38,34 @@ class Auteur
      */
     private $prenomAuteur;
 
+    public function getIdAuteur(): ?int
+    {
+        return $this->idAuteur;
+    }
+
+    public function getNomAuteur(): ?string
+    {
+        return $this->nomAuteur;
+    }
+
+    public function setNomAuteur(string $nomAuteur): self
+    {
+        $this->nomAuteur = $nomAuteur;
+
+        return $this;
+    }
+
+    public function getPrenomAuteur(): ?string
+    {
+        return $this->prenomAuteur;
+    }
+
+    public function setPrenomAuteur(string $prenomAuteur): self
+    {
+        $this->prenomAuteur = $prenomAuteur;
+
+        return $this;
+    }
+
 
 }
